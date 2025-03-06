@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第一篇博客！, SP_orange&#39;s blog">
+    <meta name="keywords" content="二分算法, SP_orange&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第一篇博客！ | SP_orange&#39;s blog</title>
+    <title>二分算法 | SP_orange&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第一篇博客！</h1>
+                    <h1 class="description center-align post-title">二分算法</h1>
                 </div>
             </div>
         </div>
@@ -431,9 +431,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
+                                <span class="chip bg-color">二分查找</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -445,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2025-03-05
+                    2025-03-06
                 </div>
                 
 
@@ -466,7 +470,38 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><p>今天在学习二分算法时，发现一种比较特殊的算法，不容易混淆。是b站up主五点七边制作的视频中看的</p>
+<blockquote>
+<h3 id="《二分查找为什么总是写错？》"><a href="#《二分查找为什么总是写错？》" class="headerlink" title="《二分查找为什么总是写错？》"></a>《二分查找为什么总是写错？》</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d54y1q7k7/?spm_id_from=333.337.search-card.all.click&amp;vd_source=aa907935641eabdcd7d51d6168b08acd">https://www.bilibili.com/video/BV1d54y1q7k7/?spm_id_from=333.337.search-card.all.click&amp;vd_source=aa907935641eabdcd7d51d6168b08acd</a></p>
+</blockquote>
+<p>感觉非常巧妙，主要有模板和判断条件组成</p>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> l = <span class="number">-1</span>, r = n;  <span class="comment">// 初始化区间</span></span><br><span class="line"><span class="keyword">while</span> (l + <span class="number">1</span> != r) &#123;</span><br><span class="line">    <span class="type">int</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">IsBlue</span>(nums[m], target)) &#123;  <span class="comment">// 判断条件</span></span><br><span class="line">        l = m;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        r = m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> r;  <span class="comment">// 根据场景返回 l 或 r </span></span><br></pre></td></tr></table></figure>
+<p>主要是通过blue区间和red区间的区分实现。通过<code>IsBlue()</code>函数来实现不同类型。</p>
+<p>例如一个数组 <code>1235557 target=5</code>：</p>
+<ul>
+<li>选取最小的 5：return r，条件：k &lt; p</li>
+<li>选取最大的 5：return r，条件：k &lt;= p</li>
+<li>选取 5 之前的：return l，条件：k &lt; p</li>
+<li>选取 5 之后的：return r，条件：k &lt; p</li>
+</ul>
+<h2 id="真题及代码实现"><a href="#真题及代码实现" class="headerlink" title="真题及代码实现"></a>真题及代码实现</h2><p>选自洛谷：</p>
+<blockquote>
+<h4 id="P2249-【深基13-例1】查找"><a href="#P2249-【深基13-例1】查找" class="headerlink" title="P2249 【深基13.例1】查找"></a>P2249 【深基13.例1】查找</h4><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2249">https://www.luogu.com.cn/problem/P2249</a></p>
+</blockquote>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入 $n$ 个不超过 $10^9$ 的单调不减的（就是后面的数字不小于前面的数字）非负整数 $a<em>1,a_2,\dots,a</em>{n}$，然后进行 $m$ 次询问。对于每次询问，给出一个整数 $q$，要求输出这个数字在序列中第一次出现的编号，如果没有找到的话输出 $-1$ 。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行 $2$ 个整数 $n$ 和 $m$，表示数字个数和询问次数。</p>
+<p>第二行 $n$ 个整数，表示这些待查询的数字。</p>
+<p>第三行 $m$ 个整数，表示询问这些数字的编号，从 $1$ 开始编号。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一行，$m$ 个整数，以空格隔开，表示答案。</p>
+<h3 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h3><p><strong>输入：</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">11 3</span><br><span class="line">1 3 3 3 5 7 9 11 13 15 15</span><br><span class="line">1 3 6</span><br></pre></td></tr></table></figure></p>
+<p><strong>输出：</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2 -1</span><br></pre></td></tr></table></figure></p>
+<h3 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h3><p>数据保证，$1 \leq n \leq 10^6$，$0 \leq a_i,q \leq 10^9$，$1 \leq m \leq 10^5$</p>
+<p>本题输入输出量较大，请使用较快的 IO 方式。</p>
+<h3 id="我的代码实现"><a href="#我的代码实现" class="headerlink" title="我的代码实现"></a>我的代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isBlue</span><span class="params">(<span class="type">int</span> num, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num &lt; target;  <span class="comment">// 蓝色区间：小于target的元素</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">nums</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) cin &gt;&gt; nums[i];</span><br><span class="line">    </span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">queries</span><span class="params">(m)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++) cin &gt;&gt; queries[i];</span><br><span class="line">    </span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; results;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> target : queries) &#123;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">-1</span>, r = n;</span><br><span class="line">        <span class="keyword">while</span> (l + <span class="number">1</span> != r) &#123;</span><br><span class="line">            <span class="type">int</span> mid = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">isBlue</span>(nums[mid], target)) &#123;</span><br><span class="line">                l = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (r &lt; n &amp;&amp; nums[r] == target) &#123;</span><br><span class="line">            results.<span class="built_in">push_back</span>(r + <span class="number">1</span>);  <span class="comment">// 题目要求从1开始计数</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            results.<span class="built_in">push_back</span>(<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> res : results) cout &lt;&lt; res &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然也是可以AC的啦~</p>
+<p>这是我的第一篇算法记录！！希望我能越走越远，观看屏幕前的你也加油！</p>
+<p>如果喜欢我的博客，可以点击下方的打赏支持哟(＾Ｕ＾)ノ~ＹＯ</p>
+
                 
             </div>
             <hr/>
@@ -492,7 +527,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2025/03/05/blog/">http://example.com/2025/03/05/blog/</a>
+                    <a href="http://example.com/2025/03/06/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/">http://example.com/2025/03/06/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -529,7 +564,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
+                                    <span class="chip bg-color">二分查找</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -697,17 +736,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2025/03/05/%E5%88%A9%E7%94%A8hexo-githubpage%E6%90%AD%E5%BB%BA%EF%BC%8C%E9%83%A8%E7%BD%B2%EF%BC%8C%E7%BE%8E%E5%8C%96%EF%BC%8C%E4%B8%AA%E4%BA%BAbolg%E6%95%99%E7%A8%8B%E6%95%99%E7%A8%8B/">
+                <a href="/2025/03/06/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="利用hexo+githubpage搭建，部署，美化，个人bolg教程教程">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="二分算法">
                         
-                        <span class="card-title">利用hexo+githubpage搭建，部署，美化，个人bolg教程教程</span>
+                        <span class="card-title">二分算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -717,9 +757,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -727,6 +767,15 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
+                        <span class="chip bg-color">二分查找</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -738,13 +787,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/03/05/hello-world/">
+                <a href="/2025/03/05/%E5%88%A9%E7%94%A8hexo-githubpage%E6%90%AD%E5%BB%BA%EF%BC%8C%E9%83%A8%E7%BD%B2%EF%BC%8C%E7%BE%8E%E5%8C%96%EF%BC%8C%E4%B8%AA%E4%BA%BAbolg%E6%95%99%E7%A8%8B%E6%95%99%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="利用hexo+githubpage搭建，部署，美化，个人bolg教程教程">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">利用hexo+githubpage搭建，部署，美化，个人bolg教程教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -892,6 +941,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
