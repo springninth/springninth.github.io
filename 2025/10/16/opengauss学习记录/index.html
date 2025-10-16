@@ -480,8 +480,25 @@
 <h2 id="DBMS-数据库管理系统"><a href="#DBMS-数据库管理系统" class="headerlink" title="DBMS 数据库管理系统"></a>DBMS 数据库管理系统</h2><ol>
 <li>RDBMS 关系型数据库管理系统</li>
 <li>网状模型数据库管理系统</li>
-<li>层次模型管理系统 -&gt; ~MYSQL ORACLE OPENGAUSS</li>
-<li>NoSql 数据库管理系统 -&gt;高性能并发 redis/ 文档类型数据库MongoDB / 搜索引擎数据库 ES Solor / 分布式数据库 Hbase</li>
+<li>层次模型管理系统 -&gt; ~MYSQL ORACLE OPENGAUSS / <strong>结构化数据</strong></li>
+<li>NoSql 数据库管理系统 -&gt;高性能并发 redis/ 文档类型数据库MongoDB / 搜索引擎数据库 ES Solor / 分布式数据库 Hbase </li>
+</ol>
+<p><strong>数据库系统</strong></p>
+<p>计算机系统中引入数据库后的系统就是数据库系统</p>
+<h3 id="数据管理技术的三个发展阶段"><a href="#数据管理技术的三个发展阶段" class="headerlink" title="数据管理技术的三个发展阶段"></a>数据管理技术的三个发展阶段</h3><p>人工管理阶段-&gt;文件系统阶段-&gt;数据库系统阶段</p>
+<h3 id="数据库模型"><a href="#数据库模型" class="headerlink" title="数据库模型"></a>数据库模型</h3><p>层次模型 网状模型 关系数据模型<br><strong>层次模型</strong></p>
+<ol>
+<li>有且只有一个节点没有双亲，改节点被称为根节点ROOT</li>
+<li>根节点以外的其他节点有且只有一个双亲节点<br><strong>网状模型</strong></li>
+<li>允许一个以上的节点无双亲</li>
+<li>一个节点可以有多于一个的双亲<br><strong>关系模型</strong></li>
+<li>建立在严格的数据概念基础上</li>
+<li>关系必须是规范化的</li>
+<li>关系的分量必须是一个不可分的数据项<h3 id="关系数据库ACID特性"><a href="#关系数据库ACID特性" class="headerlink" title="关系数据库ACID特性"></a>关系数据库ACID特性</h3></li>
+<li>原子性<br>事务是数据库的逻辑工作单位，事务中单个操作，要么都做，要么都不做</li>
+<li>一致性<br>食物的执行结果必须是使数据库从一个一致性状态转到另一个一致性状态</li>
+<li>隔离性<br>数据库中一个事务的执行不能被其他事务干扰。即一个事务的内部操作及使用的数据对其他事务是隔离的，并发执行的各个事务不能相互干扰</li>
+<li>持久性<br>事务一旦提交，对数据库中数据的改变是永久的。提交后的操作或者故障不会对事务的操作结果产生任何影响</li>
 </ol>
 
                 
