@@ -497,11 +497,6 @@
 <p>For example, suppose we call windowPosSum with the array a = {1, 2, -3, 4, 5, 4}, and n = 3. In this case, we’d:<br>例如，假设我们用数组 a = {1, 2, -3, 4, 5, 4} 调用 windowPosSum ，和 n = 3 。在这种情况下，我们会：</p>
 <p>Replace a[0] with a[0] + a[1] + a[2] + a[3].<br>将 a[0] 替换为 a[0] + a[1] + a[2] + a[3]。<br>Replace a[1] with a[1] + a[2] + a[3] + a[4].<br>将 a[1] 替换为 a[1] + a[2] + a[3] + a[4]。<br>Not do anything to a[2] because it’s negative.<br>不要对 a[2]做任何操作，因为它是负数。<br>Replace a[3] with a[3] + a[4] + a[5].<br>将 a[3]替换为 a[3] + a[4] + a[5]。<br>Replace a[4] with a[4] + a[5].<br>将 a[4]替换为 a[4] + a[5]。<br>Not do anything with a[5] because there are no values after a[5].<br>不要对 a[5]做任何操作，因为 a[5]之后没有其他值。<br>Thus, the result after calling windowPosSum would be {4, 8, -3, 13, 9, 4}.<br>因此，调用 windowPosSum 后的结果将是 {4, 8, -3, 13, 9, 4} 。</p>
 <p>As another example, if we called windowPosSum with the array a = {1, -1, -1, 10, 5, -1}, and n = 2, we’d get {-1, -1, -1, 14, 4, -1}.<br>作为另一个例子，如果我们用数组 a = {1, -1, -1, 10, 5, -1} 调用 windowPosSum ，和 n = 2 ，我们会得到 {-1, -1, -1, 14, 4, -1} 。</p>
-<p>public class BreakContinue {<br>  public static void windowPosSum(int[] a, int n) {<br>    /<em>* your code here </em>/<br>  }</p>
-<p>  public static void main(String[] args) {<br>    int[] a = {1, 2, -3, 4, 5, 4};<br>    int n = 3;<br>    windowPosSum(a, n);</p>
-<pre><code>// Should print 4, 8, -3, 13, 9, 4
-System.out.println(java.util.Arrays.toString(a));
-</code></pre><p>  }<br>}<br>Starter code is available at this link.<br>示例代码可以在该链接中找到。</p>
 <p>Hint 1: Use two for loops.<br>提示 1：使用两个 for 循环。</p>
 <p>Hint 2: Use continue to skip negative values.<br>提示 2：使用 continue 跳过负值。</p>
 <p>Hint 3: Use break to avoid going over the end of the array.<br>提示 3：使用 break 来避免超出数组的末尾。</p>
